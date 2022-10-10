@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Employee Management System</title>
+</head>
+<body>
+<div align = "center">
+    <h1>Employee Management System</h1>
+    <hr>
+    <h2>Update Employee</h2>
+
+    <form method="POST" th:action="@{/saveEmployee}" th:object="${employee}">
+        <input type = "hidden" th:field = "*{id}"  />
+        <input type = "text" th:field = "*{First_Name}" >
+        <input type = "text" th:field = "*{Last_Name}" >
+        <input type = "text" th:field = "*{Email}" >
+        <input type = "text" th:field = "*{Phone}" >
+        <button type = "submit">Update Employee</button>
+    </form>
+    <hr>
+    <a th:href="@{/}">Back to Employee List  </a>
+</div>
+
+</body>
+</html>
